@@ -1,0 +1,27 @@
+.backdrop {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  .img-rotated {
+    height: 80%;
+    width: 80%;
+    padding-bottom: 50px;
+  }
+}
+
+@media (orientation: portrait) {
+  .img-rotated {
+    transform: rotate(90deg);
+  }
+}
+
+@media (min-width: 769px) and (orientation: landscape) {
+  .img-rotated {
+    transform: rotate(0deg);
+  }
+}
