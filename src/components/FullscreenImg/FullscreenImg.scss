@@ -1,20 +1,43 @@
 .img__backdrop {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 100;
-  .img {
-    height: 80%;
-    width: 80%;
-    padding-bottom: 50px;
-  }
+  display: none;
 }
 
 @media (orientation: portrait) {
-  .img {
+  .active-img {
     transform: rotate(90deg);
+  }
+}
+
+.active-img__backdrop {
+  z-index: 100;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  display: block;
+  display: flex;
+  animation: opacity 1s ease-in-out forwards;
+  .active-img {
+    padding-bottom: 50px;
+    animation: slideIn 1s ease-in-out forwards;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    height: 0%;
+    width: 0%;
+  }
+  to {
+    height: 80%;
+    width: 80%;
+  }
+}
+
+@keyframes opacity {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.3);
   }
 }

@@ -9,17 +9,30 @@ class FullscreenImg extends React.PureComponent {
       active: false
     };
   }
+  handleClick = () => {
+    this.setState({ active: true });
+  };
 
-  static getDrivedStateFromProps(nextProps, nextState) {
-    if (nextProps.active !== nextState.active) {
-      return { active: nextProps.active };
-    }
-  }
+  // static getDrivedStateFromProps(nextProps, nextState) {
+  //   if (nextProps.active !== nextState.active) {
+  //     return { active: nextProps.active };
+  //   }
+  // }
 
   render() {
     return (
-      <div className="img__backdrop">
-        <img className="img" src={komp} />
+      <div>
+        <button onClick={this.handleClick}>Click me</button>
+        <div
+          className={
+            this.state.active ? "active-img__backdrop" : "img__backdrop"
+          }
+        >
+          <img
+            className={this.state.active ? "active-img" : "img"}
+            src={komp}
+          />
+        </div>
       </div>
     );
   }
