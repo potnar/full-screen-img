@@ -1,7 +1,21 @@
 .img__backdrop {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0vh;
+  background-color: rgba(0, 0, 0, 0);
+  transition: width 2s, height 2s, background-color 1s ease-in-out;
+  img {
+    width: 0;
+    height: 0;
+    transition: width 2s, height 2s;
+  }
 }
 
+button {
+  z-index: 1;
+}
 @media (orientation: portrait) {
   .active-img {
     transform: rotate(90deg);
@@ -9,35 +23,41 @@
 }
 
 .active-img__backdrop {
+  transition: width 2s, height 2s, background-color 1s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 100;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   display: block;
   display: flex;
-  animation: opacity 1s ease-in-out forwards;
+  background-color: rgba(0, 0, 0, 0.3);
   .active-img {
+    transition: width 2s, height 2s;
     padding-bottom: 50px;
-    animation: slideIn 1s ease-in-out forwards;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    height: 0%;
-    width: 0%;
-  }
-  to {
     height: 80%;
     width: 80%;
   }
 }
 
-@keyframes opacity {
-  from {
-    background: rgba(0, 0, 0, 0);
-  }
-  to {
-    background: rgba(0, 0, 0, 0.3);
-  }
-}
+// @keyframes slideIn {
+//   from {
+//     height: 0%;
+//     width: 0%;
+//   }
+//   to {
+//     height: 80%;
+//     width: 80%;
+//   }
+// }
+
+// @keyframes opacity {
+//   from {
+//     background-color: rgba(0, 0, 0, 0);
+//   }
+//   to {
+//     background-color: rgba(0, 0, 0, 0.3);
+//   }
+// }
