@@ -1,13 +1,15 @@
 import React from "react";
 import "./App.scss";
-import Backdrop from "./components/Backdrop";
+import FullscreenImg from "./components/FullscreenImg";
 
-function App() {
-  return (
-    <div className="App">
-      <Backdrop />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <FullscreenImg />
+      </div>
+    );
+  }
 }
 
 export default App;

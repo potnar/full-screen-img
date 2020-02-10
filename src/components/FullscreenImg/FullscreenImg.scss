@@ -1,5 +1,4 @@
-.backdrop {
-  position: fixed;
+.img__backdrop {
   display: flex;
   align-items: center;
   height: 100vh;
@@ -7,7 +6,7 @@
 
   background: rgba(0, 0, 0, 0.3);
   z-index: 100;
-  .img-rotated {
+  .img {
     height: 80%;
     width: 80%;
     padding-bottom: 50px;
@@ -15,13 +14,7 @@
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
-  .img-rotated {
+  .img {
     transform: rotate(90deg);
-  }
-}
-
-@media (max-width: 768px) and (orientation: landscape) {
-  .img-rotated {
-    transform: rotate(0deg);
   }
 }
