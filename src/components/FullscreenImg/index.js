@@ -3,7 +3,7 @@ import "./FullscreenImg.scss";
 import komp from "../../assets/komp.svg";
 
 class FullscreenImg extends React.PureComponent {
-  state = { active: this.props.active, nextState: this.state.active };
+  this.state = { active: this.props.active, nextState: this.state.active };
 
   static getDerivedStateFromProps(nextProps, nextState) {
     if (nextProps.showHide !== this.state.active) {
