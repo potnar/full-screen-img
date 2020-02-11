@@ -7,13 +7,16 @@ class App extends React.Component {
     active: false
   };
 
+  clickHandler = () => {
+    this.setState(prevState => {
+      return { active: !prevState.active };
+    });
+  };
+
   render() {
     return (
       <div className="App">
-        <FullscreenImg
-          active={this.state.active}
-          onClose={() => this.setState({ active: true })}
-        />
+        <FullscreenImg active={this.state.active} onClose={this.clickHandler} />
       </div>
     );
   }
