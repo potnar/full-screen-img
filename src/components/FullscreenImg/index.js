@@ -3,10 +3,7 @@ import "./FullscreenImg.scss";
 import komp from "../../assets/komp.svg";
 
 class FullscreenImg extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = { active: this.props.state };
-  }
+  state = { active: this.props.active, nextState: this.state.active };
 
   static getDerivedStateFromProps(nextProps, nextState) {
     if (nextProps.showHide !== this.state.active) {
@@ -16,17 +13,15 @@ class FullscreenImg extends React.PureComponent {
   render() {
     return (
       <div>
-        <button onClick={this.getDerivedStateFromProps}>Click me</button>
+        <button onClick={this.props.onClose}>Click me</button>
         <div
-          onClick={this.getDerivedStateFromProps}
+          onClick={this.props.onClose}
           className={
-            this.getDerivedStateFromProps
-              ? ".img__backdrop"
-              : ".active-img__backdrop"
+            this.nextProps.showHide ? ".img__backdrop" : ".active-img__backdrop"
           }
         >
           <img
-            className={this.getDerivedStateFromProps ? ".img" : ".active-img"}
+            className={this.nextProps.showHide ? ".img" : ".active-img"}
             src={komp}
           />
         </div>
