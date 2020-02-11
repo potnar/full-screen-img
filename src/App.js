@@ -11,8 +11,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <FullscreenImg
-          showHide={this.state.active}
-          onClose={() => this.setState({ active: false })}
+          active={this.state.active}
+          onClose={() => this.setState({ active: true })}
         />
       </div>
     );

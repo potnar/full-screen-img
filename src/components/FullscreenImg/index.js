@@ -3,25 +3,28 @@ import "./FullscreenImg.scss";
 import komp from "../../assets/komp.svg";
 
 class FullscreenImg extends React.PureComponent {
-  this.state = { active: this.props.active, nextState: this.state.active };
+  constructor(props) {
+    super(props);
+    this.state = { active: props.active };
+  }
 
   static getDerivedStateFromProps(nextProps, nextState) {
-    if (nextProps.showHide !== this.state.active) {
-      return { active: nextProps.showHide };
+    if (nextProps.active !== nextState.active) {
+      return { active: nextProps.active };
     }
   }
   render() {
     return (
-      <div>
+      <div className="img__backdrop--wrapper">
         <button onClick={this.props.onClose}>Click me</button>
         <div
           onClick={this.props.onClose}
           className={
-            this.nextProps.showHide ? ".img__backdrop" : ".active-img__backdrop"
+            this.props.active ? "img__backdrop" : "active-img__backdrop"
           }
         >
           <img
-            className={this.nextProps.showHide ? ".img" : ".active-img"}
+            className={this.props.showHide ? "img" : "active-img"}
             src={komp}
           />
         </div>
