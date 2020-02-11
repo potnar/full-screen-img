@@ -17,7 +17,6 @@ class FullscreenImg extends React.PureComponent {
     console.log(this.props.active);
     return (
       <div className="img__backdrop--wrapper">
-        <button onClick={this.props.onClose}>Click me</button>
         <div
           onClick={this.props.onClose}
           className={

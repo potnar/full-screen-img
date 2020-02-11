@@ -16,6 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <button onClick={this.clickHandler}>Click me</button>
         <FullscreenImg active={this.state.active} onClose={this.clickHandler} />
       </div>
     );
