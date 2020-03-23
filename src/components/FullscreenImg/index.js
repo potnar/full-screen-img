@@ -17,15 +17,10 @@ class FullscreenImg extends React.PureComponent {
     console.log(this.props.active);
     return (
       <div className="img__backdrop--wrapper">
-        <div
-          onClick={this.props.onClose}
-          className={
-            this.props.active ? "active-img__backdrop" : "img__backdrop"
-          }
-        >
+        <div className="img__backdrop">
           <img
-            className={this.props.active ? "active-img" : "img"}
-            src={komp}
+            className="img"
+            src="https://upload.wikimedia.org/wikipedia/commons/e/e7/5-cube_solved_close.png"
           />
         </div>
       </div>

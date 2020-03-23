@@ -1,44 +1,25 @@
 .img__backdrop {
   position: fixed;
-  align-items: center;
-  display: flex;
   top: 0;
   left: 0;
-  width: 0%;
-  height: 0vh;
-  background-color: rgba(0, 0, 0, 0);
-  transition: width 2s, height 2s, background-color 1s ease-in-out;
-  img {
-    width: 0;
-    height: 0;
-    transition: width 2s, height 2s;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  .img {
+    max-height: 100%;
+    max-width: 100%;
   }
 }
 
 @media (orientation: portrait) {
-  .active-img {
-    transform: rotate(90deg);
-  }
   .img {
-    transform: rotate(90deg);
-  }
-}
-
-.active-img__backdrop {
-  transition: width 2s, height 2s, background-color 1s ease-in-out;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  height: 100vh;
-  width: 100%;
-  align-items: center;
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.3);
-  .active-img {
-    transition: width 2s, height 2s;
-    height: 80%;
-    width: 80%;
+    -webkit-transform: rotate(90deg) scale(0.8); /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(90deg) scale(0.8); /* IE 9 */
+    transform: rotate(90deg) scale(0.8); /* Firefox 16+, IE 10+, Opera */
   }
 }
 
